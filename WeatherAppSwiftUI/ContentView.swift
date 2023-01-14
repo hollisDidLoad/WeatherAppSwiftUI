@@ -14,16 +14,21 @@ struct ContentView: View {
     @State var searchText = String()
     
     var body: some View {
-            ZStack {
-                LinearGradient(gradient: Gradient(colors: [.blue, .teal, .white]), startPoint: .topLeading, endPoint: .bottom)
-                    .edgesIgnoringSafeArea(.all)
-                VStack {
-                    SearchBarView(searchText: $searchText)
-                    Spacer()
-                    WeatherDataView(degrees: $degrees, day: $searchText)
-                    Spacer()
-                }
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [
+                .blue,
+                .teal,
+                .teal,
+                .white
+            ]),startPoint: .topLeading, endPoint: .bottom)
+            .edgesIgnoringSafeArea(.all)
+            VStack {
+                SearchBarView(searchText: $searchText)
+                Spacer()
+                WeatherDataView(degrees: $degrees, day: $searchText)
+                Spacer()
             }
+        }
     }
 }
 
@@ -51,8 +56,8 @@ struct SearchBarView: View {
         }
         .padding()
         .background(
-        RoundedRectangle(cornerRadius: 25)
-            .fill(.white)
+            RoundedRectangle(cornerRadius: 25)
+                .fill(.white)
         )
         .padding()
     }
